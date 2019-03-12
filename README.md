@@ -6,11 +6,11 @@ This is a tool for dumping the ptmalloc2 heap into a file, and for visualizing t
 
 ptmallocdump.c is a library responsible for dumping the heap to a file.
 
-### Warning
+### Caveats
 
-This dumper has only been tested on Ubuntu 18.04. The dumper relies on specific glibc/ptmalloc2 internals, so it will most likely break if you use it on any other OS/distro/glibc version.
-
-This dumper is also *not thread-safe*. It does not acquire any ptmalloc2 mutexes. When using it, make sure that the process you're dumping is idling in all threads.
+ * This dumper has only been tested on Ubuntu 18.04. The dumper relies on specific glibc/ptmalloc2 internals, so it will most likely break if you use it on any other OS/distro/glibc version.
+ * This dumper is also *not thread-safe*. It does not acquire any ptmalloc2 mutexes. When using it, make sure that the process you're dumping is idling in all threads.
+ * Although I haven't explicitly tested, this dumper is probably incompatible with swapping. It uses `mincore()` to check whether a page is in use or whether it has been `madvise(MADV_FREE)`'ed, but I suspect that if a page has been swapped to disk then `mincore()` would return the same result. So disable swap space.
 
 ### Compilation
 
