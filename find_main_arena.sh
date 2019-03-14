@@ -26,4 +26,7 @@ if ! test -f "${libc_debug_path}" ; then
     die "missing libc debug symbols \"${libc_debug_path}\""
 fi
 
-objdump -t "${libc_debug_path}" | grep ' main_arena' | awk '{ print $1 }'
+objdump -t "${libc_debug_path}" |
+    grep ' main_arena' |
+    awk '{ print $1 }' |
+    tr 'a-f' 'A-F'
