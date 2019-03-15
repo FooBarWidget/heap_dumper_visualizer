@@ -1,6 +1,6 @@
 # ptmalloc2 heap dumper and visualizer
 
-This is a tool for dumping the ptmalloc2 heap into a file, and for visualizing that dump. I wrote this as part of my research into [what causes memory bloating in Ruby](https://vimeo.com/322007980).
+This is a tool for dumping the ptmalloc2 heap into a file, and for visualizing that dump. I wrote this as part of my research into [what causes memory bloating in Ruby](https://www.joyfulbikeshedding.com/blog/2019-03-14-what-causes-ruby-memory-bloat.html).
 
 ## Dumper
 
