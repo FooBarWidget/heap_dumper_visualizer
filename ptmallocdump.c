@@ -1,5 +1,3 @@
-// gcc -shared -g ptmallocdump.c -fPIC -o libptmallocdump.so -Wall -fno-strict-aliasing
-
 #include <stddef.h>
 #include <stdio.h>
 #include <stdint.h>
